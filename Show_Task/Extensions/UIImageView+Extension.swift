@@ -9,6 +9,7 @@ import UIKit
 
 extension UIImageView {
     func download(urlString: String) {
+        // replace image with avatar if url is empty
         if urlString == ""{
             DispatchQueue.main.async {
                 self.image = UIImage(named: "avatar")
@@ -28,6 +29,7 @@ extension UIImageView {
         }
     }
     
+    // setup loading activityIndicator
     fileprivate var activityIndicator: UIActivityIndicatorView {
         let loadingIndicator = UIActivityIndicatorView()
         loadingIndicator.center = CGPoint(
@@ -41,8 +43,9 @@ extension UIImageView {
         self.addSubview(loadingIndicator)
         return loadingIndicator
     }
-    
+    // stop loading
     func stopAnimation() {
+        // viewWithTag(100) refer to the loadingIndicator
         DispatchQueue.main.async {
             if let viewWithTag = self.viewWithTag(100) {
                 viewWithTag.removeFromSuperview()

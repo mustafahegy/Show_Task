@@ -11,14 +11,14 @@ class ShowListVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    private var shows:  [ShowsModel]?
+    private var shows:  [ShowsModel] = []
     private static var cellIdentifier = "ShowsTableViewCell"
-    let loadingAlert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+    let loadingAlert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert) // for loading
     
     override func viewDidLoad() {
         super.viewDidLoad()
         registerNib()
-        fetchObjects(urlString: "http://api.tvmaze.com/search/shows?q=Future")
+        loadData(urlString: "http://api.tvmaze.com/search/shows?q=Future")
     }
     
     func registerNib() {
@@ -28,7 +28,7 @@ class ShowListVC: UIViewController {
 }
 
 extension ShowListVC {
-    fileprivate func fetchObjects(urlString: String) {
+    fileprivate func loadData(urlString: String) {
         startLoading()
         guard let url = URL(string: urlString) else { return }
         
@@ -47,18 +47,18 @@ extension ShowListVC {
                 print("failed to decode json:", jsonErr)
             }
             
-        }.resume() // don't forget
+        }.resume()
     }
 }
 
 extension ShowListVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        shows?.count ?? 0
+        shows.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ShowListVC.cellIdentifier) as! ShowsTableViewCell
-        if let show = self.shows?[indexPath.row].show {
+        if let show = self.shows[indexPath.row].show {
             cell.configure(show: show)
         }
         return cell
@@ -66,9 +66,9 @@ extension ShowListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        
+        // navigate to show details screen
         let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShowDetailsVC") as! ShowDetailsVC
-        secondViewController.show = self.shows![indexPath.row].show
+        secondViewController.show = self.shows[indexPath.row].show
         self.navigationController?.pushViewController(secondViewController, animated: true)
     }
     
