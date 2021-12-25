@@ -20,7 +20,7 @@ struct Show : Codable {
 	let language : String?
 	let genres : [String]?
 	let status : String?
-	let runtime : String?
+	let runtime : Int?
 	let averageRuntime : Int?
 	let premiered : String?
 	let ended : String?
@@ -28,14 +28,12 @@ struct Show : Codable {
 	let schedule : Schedule?
 	let rating : Rating?
 	let weight : Int?
-	let network : String?
 	let webChannel : WebChannel?
 	let dvdCountry : String?
 	let externals : Externals?
 	let image : Image?
 	let summary : String?
 	let updated : Int?
-	let _links : _links?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -54,14 +52,12 @@ struct Show : Codable {
 		case schedule = "schedule"
 		case rating = "rating"
 		case weight = "weight"
-		case network = "network"
 		case webChannel = "webChannel"
 		case dvdCountry = "dvdCountry"
 		case externals = "externals"
 		case image = "image"
 		case summary = "summary"
 		case updated = "updated"
-		case _links = "_links"
 	}
 
 	init(from decoder: Decoder) throws {
@@ -73,7 +69,7 @@ struct Show : Codable {
 		language = try values.decodeIfPresent(String.self, forKey: .language)
 		genres = try values.decodeIfPresent([String].self, forKey: .genres)
 		status = try values.decodeIfPresent(String.self, forKey: .status)
-		runtime = try values.decodeIfPresent(String.self, forKey: .runtime)
+		runtime = try values.decodeIfPresent(Int.self, forKey: .runtime)
 		averageRuntime = try values.decodeIfPresent(Int.self, forKey: .averageRuntime)
 		premiered = try values.decodeIfPresent(String.self, forKey: .premiered)
 		ended = try values.decodeIfPresent(String.self, forKey: .ended)
@@ -81,14 +77,12 @@ struct Show : Codable {
 		schedule = try values.decodeIfPresent(Schedule.self, forKey: .schedule)
 		rating = try values.decodeIfPresent(Rating.self, forKey: .rating)
 		weight = try values.decodeIfPresent(Int.self, forKey: .weight)
-		network = try values.decodeIfPresent(String.self, forKey: .network)
 		webChannel = try values.decodeIfPresent(WebChannel.self, forKey: .webChannel)
 		dvdCountry = try values.decodeIfPresent(String.self, forKey: .dvdCountry)
 		externals = try values.decodeIfPresent(Externals.self, forKey: .externals)
 		image = try values.decodeIfPresent(Image.self, forKey: .image)
 		summary = try values.decodeIfPresent(String.self, forKey: .summary)
 		updated = try values.decodeIfPresent(Int.self, forKey: .updated)
-		_links = try values.decodeIfPresent(_links.self, forKey: ._links)
 	}
 
 }

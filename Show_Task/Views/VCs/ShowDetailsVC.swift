@@ -9,10 +9,16 @@ import UIKit
 
 class ShowDetailsVC: UIViewController {
 
+    @IBOutlet weak var showImage: UIImageView!
+    var show: Show?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
+    func setupViews() {
+        
+    }
 }
+
