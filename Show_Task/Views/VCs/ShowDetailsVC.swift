@@ -10,6 +10,7 @@ import UIKit
 class ShowDetailsVC: UIViewController {
 
     @IBOutlet weak var showImage: UIImageView!
+    
     var show: Show?
     
     override func viewDidLoad() {
