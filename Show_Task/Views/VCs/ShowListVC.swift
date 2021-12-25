@@ -66,9 +66,10 @@ extension ShowListVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        let next = self.storyboard?.instantiateViewController(withIdentifier: "ShowDetailsVC") as! ShowDetailsVC
-        next.show = self.shows![indexPath.row].show
-        self.present(next, animated: true, completion: nil)
+        
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "ShowDetailsVC") as! ShowDetailsVC
+        secondViewController.show = self.shows![indexPath.row].show
+        self.navigationController?.pushViewController(secondViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

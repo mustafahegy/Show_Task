@@ -69,7 +69,7 @@
         <!--Show DetailsVC-->
         <scene sceneID="Hhi-ea-qqs">
             <objects>
-                <viewController id="N5S-0X-NIr" customClass="ShowDetailsVC" customModule="Show_Task" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ShowDetailsVC" id="N5S-0X-NIr" customClass="ShowDetailsVC" customModule="Show_Task" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jWt-5a-L8p">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,16 +78,16 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lUw-dM-02T">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="549"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="574"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DsW-P2-qUL">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DsW-P2-qUL">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="MAI-5n-JJ9">
-                                                <rect key="frame" x="30" y="229" width="354" height="270"/>
+                                                <rect key="frame" x="30" y="254" width="354" height="270"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OKP-H5-a0g">
-                                                        <rect key="frame" x="0.0" y="0.0" width="105.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="114" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjU-O5-Gno">
                                                                 <rect key="frame" x="0.0" y="0.0" width="54" height="30"/>
@@ -95,8 +95,8 @@
                                                                 <color key="textColor" name="AccentColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffP-NW-oD2">
-                                                                <rect key="frame" x="64" y="0.0" width="41.5" height="30"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ffP-NW-oD2">
+                                                                <rect key="frame" x="64" y="0.0" width="50" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -115,12 +115,32 @@
                                                                 <color key="textColor" name="AccentColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ar-fr-meA">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ar-fr-meA" customClass="CosmosView" customModule="Cosmos">
                                                                 <rect key="frame" x="53.5" y="0.0" width="240" height="30"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="9I2-JT-7IK"/>
                                                                 </constraints>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyColor">
+                                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                                        <color key="value" name="AccentColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                                        <color key="value" name="AccentColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                                        <real key="value" value="20"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                                        <real key="value" value="2"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                                        <color key="value" name="AccentColor"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
                                                             </view>
                                                         </subviews>
                                                     </stackView>
@@ -139,11 +159,14 @@
                                                                 <buttonConfiguration key="configuration" style="plain" title="Click to show link">
                                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </buttonConfiguration>
+                                                                <connections>
+                                                                    <action selector="clickTheLink:" destination="N5S-0X-NIr" eventType="touchUpInside" id="gUx-AT-kaA"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Dpb-fm-6bp">
-                                                        <rect key="frame" x="0.0" y="180" width="123.5" height="30"/>
+                                                        <rect key="frame" x="0.0" y="180" width="92.5" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Runtime :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCQ-4g-1fe">
                                                                 <rect key="frame" x="0.0" y="0.0" width="72" height="30"/>
@@ -151,8 +174,8 @@
                                                                 <color key="textColor" name="AccentColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlm-c5-t9j">
-                                                                <rect key="frame" x="82" y="0.0" width="41.5" height="30"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xlm-c5-t9j">
+                                                                <rect key="frame" x="82" y="0.0" width="10.5" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -160,7 +183,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="dOC-mc-gVS">
-                                                        <rect key="frame" x="0.0" y="240" width="138" height="30"/>
+                                                        <rect key="frame" x="0.0" y="240" width="146.5" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="premiered :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggu-iu-MZj">
                                                                 <rect key="frame" x="0.0" y="0.0" width="86.5" height="30"/>
@@ -168,8 +191,8 @@
                                                                 <color key="textColor" name="AccentColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtx-JM-Cqe">
-                                                                <rect key="frame" x="96.5" y="0.0" width="41.5" height="30"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtx-JM-Cqe">
+                                                                <rect key="frame" x="96.5" y="0.0" width="50" height="30"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -203,7 +226,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="OvJ-7h-fQL" firstAttribute="bottom" secondItem="f5D-Vl-Z2N" secondAttribute="bottom" id="3rX-FC-aY5"/>
-                            <constraint firstItem="DsW-P2-qUL" firstAttribute="height" secondItem="jWt-5a-L8p" secondAttribute="height" multiplier="1:4.5" id="8xE-OI-PDt"/>
+                            <constraint firstItem="DsW-P2-qUL" firstAttribute="height" secondItem="jWt-5a-L8p" secondAttribute="height" multiplier="1:4" id="8xE-OI-PDt"/>
                             <constraint firstItem="lUw-dM-02T" firstAttribute="height" secondItem="jWt-5a-L8p" secondAttribute="height" multiplier="0.863839" priority="300" id="QHv-Y0-dWB"/>
                             <constraint firstItem="OvJ-7h-fQL" firstAttribute="trailing" secondItem="f5D-Vl-Z2N" secondAttribute="trailing" id="nJU-n5-s6I"/>
                             <constraint firstItem="OvJ-7h-fQL" firstAttribute="top" secondItem="f5D-Vl-Z2N" secondAttribute="top" id="whj-gV-iqr"/>
@@ -213,7 +236,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="mK8-pL-ghO"/>
                     <connections>
+                        <outlet property="premieredLabel" destination="gtx-JM-Cqe" id="OcY-TS-yZE"/>
+                        <outlet property="rateView" destination="8ar-fr-meA" id="tek-Sn-rF1"/>
+                        <outlet property="runtimeLabel" destination="gtx-JM-Cqe" id="ped-cx-WzO"/>
                         <outlet property="showImage" destination="DsW-P2-qUL" id="PxB-2b-7FX"/>
+                        <outlet property="showNameLabel" destination="ffP-NW-oD2" id="Tzd-Wt-Dyw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vt0-QI-fsB" sceneMemberID="firstResponder"/>

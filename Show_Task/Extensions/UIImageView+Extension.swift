@@ -29,7 +29,11 @@ extension UIImageView {
     }
     
     fileprivate var activityIndicator: UIActivityIndicatorView {
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        let loadingIndicator = UIActivityIndicatorView()
+        loadingIndicator.center = CGPoint(
+            x: self.bounds.midX,
+            y: self.bounds.midY
+        )
         loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.medium
         loadingIndicator.startAnimating();
